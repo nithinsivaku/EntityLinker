@@ -19,7 +19,7 @@ import org.dbpedia.spotlight.model.Text;
 
 public class DbpediaSpotlightLinker extends AnnotationClient{
 	
-	private final static String API_URL = "http://spotlight.dbpedia.org/";
+	private final static String API_URL = "http://localhost:2222/rest";
 	private static final double CONFIDENCE = 0.2;
 	private static final int SUPPORT = 0;
 	
