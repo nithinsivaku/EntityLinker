@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.unh.cs.cs980.EntityTools.DbpediaSpotlightLinker;
+import edu.unh.cs.cs980.Evaluator.F1Measure;
 import edu.unh.cs.treccar_v2.Data;
 import edu.unh.cs.treccar_v2.Data.PageSkeleton;
 import edu.unh.cs.treccar_v2.Data.Section;
@@ -54,7 +55,7 @@ public class EntityLinker {
 		for (Data.Paragraph p : DeserializeData.iterableParagraphs(fileInputStream2)) {
 			final String paraId = p.getParaId();
 			final String paraText = p.getTextOnly();
-
+			
 			List<String> entities = c.getEntities(paraText);
 			List<String> lastWord = new ArrayList<String>();
 
@@ -83,8 +84,13 @@ public class EntityLinker {
 		Map<String, List<String>> DBpediaentries = new HashMap<String, List<String>>();
 
 		groundTruth = retriveGroundTruth(paragraphsFile);
-
+		
+		
 		DBpediaentries = retriveDBpediaEntries(paragraphsFile);
+		System.out.println("DBdone");
+		
+		F1Measure f1 = new F1Measure();
+		double DBpediaToolEvaluation = f1.evaluateMeasure(groundTruth,DBpediaentries); 
 
 	}
 }

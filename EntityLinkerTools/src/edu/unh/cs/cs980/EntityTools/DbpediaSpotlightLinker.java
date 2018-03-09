@@ -46,7 +46,7 @@ public class DbpediaSpotlightLinker {
 			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			String output;
 
-			System.out.println("Hello:" + conn.getInputStream().toString());
+
 
 			StringBuilder sb = new StringBuilder();
 			while ((output = br.readLine()) != null) {
