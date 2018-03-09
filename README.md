@@ -1,6 +1,9 @@
 # EntityLinker
 This repository has different entity linking tools and performance of those tools against wikipedia ground truth.
 
+# Required
+  # Java 1.8
+  # Maven
 
 # Instructions-to-reproduce
 1. Download the zip or clone the entire repository.
