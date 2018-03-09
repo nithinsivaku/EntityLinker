@@ -1,5 +1,5 @@
 # EntityLinker
-This repository has different entity linking tools and performance of those tools against wikipedia ground truth.
+This repository contains code that has different entity linking tools and performance of those tools against wikipedia ground truth.
 
 # Required
 1. Java 1.8
