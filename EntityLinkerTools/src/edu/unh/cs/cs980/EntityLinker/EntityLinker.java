@@ -84,10 +84,11 @@ public class EntityLinker {
 		Map<String, List<String>> DBpediaentries = new HashMap<String, List<String>>();
 
 		groundTruth = retriveGroundTruth(paragraphsFile);
+		System.out.println("Paragraph entries retrieved..");
 
-		System.out.println("Retrieving DBpedia Entries..........................................");
+		System.out.println("Retrieving DBpedia Entries from http://model.dbpedia-spotlight.org/ .....");
 		DBpediaentries = retriveDBpediaEntries(paragraphsFile);
-		System.out.println("Retrieved Dbpedia entities from http://model.dbpedia-spotlight.org/");
+		System.out.println("Retrieved Dbpedia entities.......................................... ");
 
 		System.out.println("Computing F1 Measure for DBpedia Spotlight...........................");
 		F1Measure f1 = new F1Measure();
