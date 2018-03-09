@@ -1,5 +1,5 @@
 package edu.unh.cs.cs980.Evaluator;
 
-public class EvaluateGroundTruth {
+public class F1Measure {
 
 }
