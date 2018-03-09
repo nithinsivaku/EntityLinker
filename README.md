@@ -25,8 +25,9 @@ Here corpus is the leadParagraph.cbor
 1. You will see the F1 Measure for DBpedia Spotlight against TREC-CAR dataset in the command window
 
 # jar issue
-If you are facing issues with Maven build. Then i have placed the jar in the repository. You can directly run the jar by typing
+If you are facing issues with Maven build, I have placed the jar in the repository. You can directly execute the jar by typing
 java -jar EntityLinkerTools-0.0.1-SNAPSHOT-jar-with-dependencies.jar "path/to/corpus"
 
 # Update
 will modify Tagme tool soon.
+and more results set comming.
