@@ -5,7 +5,7 @@ This repository has different entity linking tools and performance of those tool
 # Instructions-to-reproduce
 1. Download the zip or clone the entire repository.
 2. Go to the project folder.
-3. Anywhere in the project folder # Type mvn package
+3. Anywhere in the project folder #type mvn package
 4. Mavel will take care of everything, you should see Build success.
 5. Now go to the target folder. You wil find a jar.
 6. Run the jar by typing
@@ -13,4 +13,4 @@ This repository has different entity linking tools and performance of those tool
 8. Here corpus is the directory for the LeadParagraphcorpus.
 
 # Result
-1. You will see the F1 score for DBpedia Spotlight in the command window
+1. You will see the F1 Measure for DBpedia Spotlight against TREC-CAR dataset in the command window
