@@ -100,7 +100,7 @@ public class EntityLinker {
 			score += d;
 		}
 
-		System.out.println("F1 Measure for DBpedia Spotlight = " + (score / DBpediaSpotlight_EvaluationScore.size()));
+		System.out.println("F1 Measure = " + (score / DBpediaSpotlight_EvaluationScore.size()));
 
 	}
 }
