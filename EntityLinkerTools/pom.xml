@@ -39,6 +39,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+
 	</build>
 	<repositories>
 		<repository>
@@ -48,6 +50,8 @@
 	</repositories>
 
 	<dependencies>
+
+
 
 		<dependency>
 			<groupId>com.github.TREMA-UNH</groupId>
@@ -93,6 +97,20 @@
 			<version>3.1</version>
 			<!-- License: Apache Software License, Version 2.0 -->
 		</dependency>
-
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.extjwnl</groupId>
+			<artifactId>extjwnl</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.extjwnl</groupId>
+			<artifactId>extjwnl-data-wn31</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 </project>

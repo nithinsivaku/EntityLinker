@@ -6,11 +6,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import org.dbpedia.spotlight.exceptions.AnnotationException;
-import org.dbpedia.spotlight.model.DBpediaResource;
-import org.dbpedia.spotlight.model.Text;
-
 import edu.unh.cs.cs980.EntityTools.DbpediaSpotlightLinker;
 import edu.unh.cs.treccar_v2.Data;
 import edu.unh.cs.treccar_v2.Data.PageSkeleton;
@@ -47,7 +42,7 @@ public class EntityLinker {
         }
 	}
 	
-	 public static void main(String[] args) throws FileNotFoundException, AnnotationException{
+	 public static void main(String[] args) throws FileNotFoundException{
 		System.setProperty("file.encoding", "UTF-8");
 
 //        if (args.length < 1)
@@ -56,9 +51,19 @@ public class EntityLinker {
 		final String paragraphsFile = args[0];
 		//readLeadParagraphID(paragraphsFile);
 		
-		DbpediaSpotlightLinker c = new DbpediaSpotlightLinker ();
+		
 		String text = "Prior to the German invasion of Norway on 9 April 1940, the Deuxième Bureau (French military intelligence) removed  of heavy water from the plant in Vemork in then-neutral Norway. The plant's managing director, Aubert, agreed to lend the heavy water to France for the duration of the war. The French transported it secretly to Oslo, to Perth, Scotland, and then to France. The plant remained capable of producing heavy water.";
-		List<DBpediaResource> response = c.extract(new Text(text));
-		System.out.println(response);
+		DbpediaSpotlightLinker c = new DbpediaSpotlightLinker ();
+		
+		ArrayList<String> entities = c.getEntities(text);
+		
+		
+		// Take the last path segment of the uri.
+		for(String url : entities)
+		{
+			String entityName = url.substring(url.lastIndexOf('/') + 1);
+			System.out.println(entityName);
+		}
+		
 	}
 }
