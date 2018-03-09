@@ -55,7 +55,7 @@ public class EntityLinker {
 		for (Data.Paragraph p : DeserializeData.iterableParagraphs(fileInputStream2)) {
 			final String paraId = p.getParaId();
 			final String paraText = p.getTextOnly();
-			
+
 			List<String> entities = c.getEntities(paraText);
 			List<String> lastWord = new ArrayList<String>();
 
@@ -84,13 +84,22 @@ public class EntityLinker {
 		Map<String, List<String>> DBpediaentries = new HashMap<String, List<String>>();
 
 		groundTruth = retriveGroundTruth(paragraphsFile);
-		
-		
+
+		System.out.println("Retrieving DBpedia Entries..........................................");
 		DBpediaentries = retriveDBpediaEntries(paragraphsFile);
-		System.out.println("DBdone");
-		
+		System.out.println("Retrieved Dbpedia entities from http://model.dbpedia-spotlight.org/");
+
+		System.out.println("Computing F1 Measure for DBpedia Spotlight...........................");
 		F1Measure f1 = new F1Measure();
-		double DBpediaToolEvaluation = f1.evaluateMeasure(groundTruth,DBpediaentries); 
+		List<Double> DBpediaSpotlight_EvaluationScore = f1.evaluateMeasure(groundTruth, DBpediaentries);
+
+		double score = 0.0;
+
+		for (Double d : DBpediaSpotlight_EvaluationScore) {
+			score += d;
+		}
+
+		System.out.println("F1 Measure for DBpedia Spotlight = " + (score / DBpediaSpotlight_EvaluationScore.size()));
 
 	}
 }

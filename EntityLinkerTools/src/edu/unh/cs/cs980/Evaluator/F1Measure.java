@@ -7,9 +7,10 @@ import java.util.Map.Entry;
 
 public class F1Measure {
 
-	public double evaluateMeasure(Map<String, List<String>> groundTruth, Map<String, List<String>> dBpediaentries) {
+	public List<Double> evaluateMeasure(Map<String, List<String>> groundTruth, Map<String, List<String>> dBpediaentries) {
 		// TODO Auto-generated method stub
-
+		
+		List<Double> F1ScoreList = new ArrayList<Double>();
 		for (Entry<String, List<String>> iter : groundTruth.entrySet()) {
 			List<String> trueEntities = new ArrayList<String>();
 			List<String> retrievedEntities = new ArrayList<String>();
@@ -55,13 +56,12 @@ public class F1Measure {
 					f1Score = ( 2 * r * p) / (r + p) ;
 				}
 			}
-			
-			System.out.println(f1Score);
+			F1ScoreList.add(f1Score);
 			
 
 		}
 
-		return 0;
+		return F1ScoreList;
 	}
 
 }
