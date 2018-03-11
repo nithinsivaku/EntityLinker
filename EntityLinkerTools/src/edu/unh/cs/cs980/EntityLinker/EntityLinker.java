@@ -96,11 +96,18 @@ public class EntityLinker {
 
 		double score = 0.0;
 
-		for (Double d : DBpediaSpotlight_EvaluationScore) {
-			score += d;
+//		for (Double d : DBpediaSpotlight_EvaluationScore) {
+//			score += d;
+//		}
+		
+		for(int i = 0; i< DBpediaSpotlight_EvaluationScore.size(); i++)
+		{
+			score += DBpediaSpotlight_EvaluationScore.get(i);
 		}
 
 		System.out.println("F1 Measure = " + (score / DBpediaSpotlight_EvaluationScore.size()));
+		
+		
 
 	}
 }
