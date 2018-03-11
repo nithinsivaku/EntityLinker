@@ -1,5 +1,7 @@
 # EntityLinker
-This repository contains code that has different entity linking tools and performance of those tools against wikipedia ground truth.
+1. This repository contains code that has different entity linking tools and performance of those tools against wikipedia ground truth.
+2. Implementation of different algorithms for Entity Linking and ranking from the paper "Entity Linking with a Knowledge Base:
+Issues, Techniques, and Solutions by Wei Shen, Jianyong Wang, Jiawei Han"
 
 # Required
 1. Java 1.8
