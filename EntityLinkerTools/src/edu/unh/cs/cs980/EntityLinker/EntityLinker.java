@@ -1,6 +1,7 @@
 package edu.unh.cs.cs980.EntityLinker;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -11,11 +12,13 @@ import java.util.Map;
 
 import edu.unh.cs.cs980.EntityTools.DbpediaSpotlightLinker;
 import edu.unh.cs.cs980.Evaluator.F1Measure;
+import edu.unh.cs.cs980.NamedDictionary.HyperLink;
 import edu.unh.cs.treccar_v2.Data;
 import edu.unh.cs.treccar_v2.Data.PageSkeleton;
 import edu.unh.cs.treccar_v2.Data.Section;
 import edu.unh.cs.treccar_v2.read_data.DeserializeData;
 
+import edu.unh.cs.cs980.NamedDictionary.*;
 public class EntityLinker {
 
 	private static void usage() {
@@ -75,37 +78,49 @@ public class EntityLinker {
 	public static void main(String[] args) throws FileNotFoundException {
 		System.setProperty("file.encoding", "UTF-8");
 
-		if (args.length < 1)
-			usage();
-
-		final String paragraphsFile = args[0];
-
-		Map<String, List<String>> groundTruth = new HashMap<String, List<String>>();
-		Map<String, List<String>> DBpediaentries = new HashMap<String, List<String>>();
-
-		groundTruth = retriveGroundTruth(paragraphsFile);
-		System.out.println("Paragraph entries retrieved..");
-
-		System.out.println("Retrieving DBpedia Entries from http://model.dbpedia-spotlight.org/ .....");
-		DBpediaentries = retriveDBpediaEntries(paragraphsFile);
-		System.out.println("Retrieved Dbpedia entities.......................................... ");
-
-		System.out.println("Computing F1 Measure for DBpedia Spotlight...........................");
-		F1Measure f1 = new F1Measure();
-		List<Double> DBpediaSpotlight_EvaluationScore = f1.evaluateMeasure(groundTruth, DBpediaentries);
-
-		double score = 0.0;
-
-//		for (Double d : DBpediaSpotlight_EvaluationScore) {
-//			score += d;
+//		if (args.length < 1)
+//			usage();
+//
+//		final String paragraphsFile = args[0];
+//
+//		Map<String, List<String>> groundTruth = new HashMap<String, List<String>>();
+//		Map<String, List<String>> DBpediaentries = new HashMap<String, List<String>>();
+//
+//		groundTruth = retriveGroundTruth(paragraphsFile);
+//		System.out.println("Paragraph entries retrieved..");
+//
+//		System.out.println("Retrieving DBpedia Entries from http://model.dbpedia-spotlight.org/ .....");
+//		DBpediaentries = retriveDBpediaEntries(paragraphsFile);
+//		System.out.println("Retrieved Dbpedia entities.......................................... ");
+//
+//		System.out.println("Computing F1 Measure for DBpedia Spotlight...........................");
+//		F1Measure f1 = new F1Measure();
+//		List<Double> DBpediaSpotlight_EvaluationScore = f1.evaluateMeasure(groundTruth, DBpediaentries);
+//
+//		double score = 0.0;
+//
+////		for (Double d : DBpediaSpotlight_EvaluationScore) {
+////			score += d;
+////		}
+//		
+//		for(int i = 0; i< DBpediaSpotlight_EvaluationScore.size(); i++)
+//		{
+//			score += DBpediaSpotlight_EvaluationScore.get(i);
 //		}
+//
+//		System.out.println("F1 Measure = " + (score / DBpediaSpotlight_EvaluationScore.size()));
 		
-		for(int i = 0; i< DBpediaSpotlight_EvaluationScore.size(); i++)
-		{
-			score += DBpediaSpotlight_EvaluationScore.get(i);
-		}
-
-		System.out.println("F1 Measure = " + (score / DBpediaSpotlight_EvaluationScore.size()));
+		
+		
+		
+		
+		
+		//****************************************************************************************/
+		
+		 
+		 HyperLink hp = new HyperLink(args[0]);
+		 
+		 
 		
 		
 
