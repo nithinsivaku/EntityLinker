@@ -14,7 +14,8 @@ Issues, Techniques, and Solutions by Wei Shen, Jianyong Wang, Jiawei Han"
 4. Mavel will take care of everything, you should see Build success.
 5. Now go to the target folder. You wil find a jar.
 6. Run the jar by typing
-7. java -jar [jarname] corpus (Note: without square[] bracket)
+
+7. ```java -jar [jarname] corpus (Note: without square[] bracket) ```
 8. Here corpus is the directory for the LeadParagraphcorpus.
 
 # jar
