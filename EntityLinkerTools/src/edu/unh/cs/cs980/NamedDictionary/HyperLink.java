@@ -33,6 +33,7 @@ public class HyperLink {
 							if (entityAnchorList.contains(anchorText) == false) {
 								entityAnchorList.add(anchorText);
 								hyperlinkDictionary.replace(entityName, entityAnchorList);
+								//
 							}
 						} else {
 							List<String> newEntityAnchorList = new ArrayList<String>();
